@@ -11,6 +11,8 @@
 		8F755AA22588C86E00C3CB72 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F755AA12588C86E00C3CB72 /* ContentView.swift */; };
 		8F755AA42588C87200C3CB72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F755AA32588C87200C3CB72 /* Assets.xcassets */; };
 		8F755AA72588C87200C3CB72 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F755AA62588C87200C3CB72 /* Preview Assets.xcassets */; };
+		8F755AB82589066D00C3CB72 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F755AB72589066D00C3CB72 /* StartView.swift */; };
+		8F755ABB25890C3A00C3CB72 /* StartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F755ABA25890C3A00C3CB72 /* StartViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		8F755AA32588C87200C3CB72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8F755AA62588C87200C3CB72 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8F755AA82588C87200C3CB72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8F755AB72589066D00C3CB72 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
+		8F755ABA25890C3A00C3CB72 /* StartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +56,12 @@
 		8F755A9E2588C86E00C3CB72 /* workshop */ = {
 			isa = PBXGroup;
 			children = (
-				8F755A9F2588C86E00C3CB72 /* workshopApp.swift */,
-				8F755AA12588C86E00C3CB72 /* ContentView.swift */,
+				8F755AB52588D89B00C3CB72 /* UI */,
+				8F755AB42588D87C00C3CB72 /* System */,
+				8F755AB32588D86600C3CB72 /* Services */,
+				8F755AB22588D84D00C3CB72 /* Repositories */,
+				8F755AB12588D83400C3CB72 /* Persistence */,
+				8F755AB02588D82A00C3CB72 /* Models */,
 				8F755AA32588C87200C3CB72 /* Assets.xcassets */,
 				8F755AA82588C87200C3CB72 /* Info.plist */,
 				8F755AA52588C87200C3CB72 /* Preview Content */,
@@ -67,6 +75,60 @@
 				8F755AA62588C87200C3CB72 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8F755AB02588D82A00C3CB72 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8F755AB12588D83400C3CB72 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		8F755AB22588D84D00C3CB72 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		8F755AB32588D86600C3CB72 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		8F755AB42588D87C00C3CB72 /* System */ = {
+			isa = PBXGroup;
+			children = (
+				8F755A9F2588C86E00C3CB72 /* workshopApp.swift */,
+			);
+			path = System;
+			sourceTree = "<group>";
+		};
+		8F755AB52588D89B00C3CB72 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				8F755AA12588C86E00C3CB72 /* ContentView.swift */,
+				8F755AC32589150900C3CB72 /* Start */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		8F755AC32589150900C3CB72 /* Start */ = {
+			isa = PBXGroup;
+			children = (
+				8F755AB72589066D00C3CB72 /* StartView.swift */,
+				8F755ABA25890C3A00C3CB72 /* StartViewModel.swift */,
+			);
+			path = Start;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +200,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F755AB82589066D00C3CB72 /* StartView.swift in Sources */,
+				8F755ABB25890C3A00C3CB72 /* StartViewModel.swift in Sources */,
 				8F755AA22588C86E00C3CB72 /* ContentView.swift in Sources */,
 				8F755AA02588C86E00C3CB72 /* workshopApp.swift in Sources */,
 			);
