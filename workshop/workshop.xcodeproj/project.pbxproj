@@ -15,6 +15,15 @@
 		8F755AB82589066D00C3CB72 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F755AB72589066D00C3CB72 /* StartView.swift */; };
 		8F755ABB25890C3A00C3CB72 /* StartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F755ABA25890C3A00C3CB72 /* StartViewModel.swift */; };
 		A0080DA6258A1B8900204DDE /* PagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0080DA5258A1B8900204DDE /* PagingView.swift */; };
+		A01A1026258A387D00E45799 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A01A1024258A387D00E45799 /* Model.xcdatamodeld */; };
+		A01A1029258A39F000E45799 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01A1028258A39F000E45799 /* CoreDataStack.swift */; };
+		A01A102C258A3A0500E45799 /* LazyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01A102B258A3A0500E45799 /* LazyList.swift */; };
+		A01A102F258A3A2900E45799 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01A102E258A3A2900E45799 /* CoreDataHelper.swift */; };
+		A01A1034258A3A6F00E45799 /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01A1033258A3A6F00E45799 /* Loadable.swift */; };
+		A01A1037258A3AC900E45799 /* CoreDataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01A1036258A3AC900E45799 /* CoreDataModels.swift */; };
+		A01A103B258A3B0100E45799 /* CancelBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01A103A258A3B0100E45799 /* CancelBag.swift */; };
+		A01A103E258A3B1C00E45799 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01A103D258A3B1C00E45799 /* Models.swift */; };
+		A01A1041258A3FB100E45799 /* ImagesDBRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01A1040258A3FB100E45799 /* ImagesDBRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +37,15 @@
 		8F755AB72589066D00C3CB72 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		8F755ABA25890C3A00C3CB72 /* StartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewModel.swift; sourceTree = "<group>"; };
 		A0080DA5258A1B8900204DDE /* PagingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingView.swift; sourceTree = "<group>"; };
+		A01A1025258A387D00E45799 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		A01A1028258A39F000E45799 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		A01A102B258A3A0500E45799 /* LazyList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyList.swift; sourceTree = "<group>"; };
+		A01A102E258A3A2900E45799 /* CoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
+		A01A1033258A3A6F00E45799 /* Loadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
+		A01A1036258A3AC900E45799 /* CoreDataModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CoreDataModels.swift; path = workshop/CoreDataModels.swift; sourceTree = SOURCE_ROOT; };
+		A01A103A258A3B0100E45799 /* CancelBag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelBag.swift; sourceTree = "<group>"; };
+		A01A103D258A3B1C00E45799 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Models.swift; path = workshop/Models.swift; sourceTree = SOURCE_ROOT; };
+		A01A1040258A3FB100E45799 /* ImagesDBRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImagesDBRepository.swift; path = workshop/ImagesDBRepository.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +62,7 @@
 		4E16510A258A0A0E00CE0942 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				A01A1039258A3AF400E45799 /* CoreData */,
 				4E16510B258A0A3E00CE0942 /* SwiftUIImagePickerView.swift */,
 				A0080DA5258A1B8900204DDE /* PagingView.swift */,
 			);
@@ -94,6 +113,8 @@
 		8F755AB02588D82A00C3CB72 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A01A1036258A3AC900E45799 /* CoreDataModels.swift */,
+				A01A103D258A3B1C00E45799 /* Models.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -101,6 +122,9 @@
 		8F755AB12588D83400C3CB72 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
+				A01A1024258A387D00E45799 /* Model.xcdatamodeld */,
+				A01A1028258A39F000E45799 /* CoreDataStack.swift */,
+				A01A102E258A3A2900E45799 /* CoreDataHelper.swift */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -108,6 +132,7 @@
 		8F755AB22588D84D00C3CB72 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				A01A1040258A3FB100E45799 /* ImagesDBRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -143,6 +168,16 @@
 				8F755ABA25890C3A00C3CB72 /* StartViewModel.swift */,
 			);
 			path = Start;
+			sourceTree = "<group>";
+		};
+		A01A1039258A3AF400E45799 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				A01A103A258A3B0100E45799 /* CancelBag.swift */,
+				A01A1033258A3A6F00E45799 /* Loadable.swift */,
+				A01A102B258A3A0500E45799 /* LazyList.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,12 +249,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A01A102F258A3A2900E45799 /* CoreDataHelper.swift in Sources */,
+				A01A102C258A3A0500E45799 /* LazyList.swift in Sources */,
+				A01A1037258A3AC900E45799 /* CoreDataModels.swift in Sources */,
 				A0080DA6258A1B8900204DDE /* PagingView.swift in Sources */,
 				8F755AB82589066D00C3CB72 /* StartView.swift in Sources */,
 				4E16510C258A0A3E00CE0942 /* SwiftUIImagePickerView.swift in Sources */,
+				A01A1026258A387D00E45799 /* Model.xcdatamodeld in Sources */,
+				A01A1041258A3FB100E45799 /* ImagesDBRepository.swift in Sources */,
+				A01A103B258A3B0100E45799 /* CancelBag.swift in Sources */,
 				8F755ABB25890C3A00C3CB72 /* StartViewModel.swift in Sources */,
 				8F755AA22588C86E00C3CB72 /* ContentView.swift in Sources */,
+				A01A1034258A3A6F00E45799 /* Loadable.swift in Sources */,
 				8F755AA02588C86E00C3CB72 /* workshopApp.swift in Sources */,
+				A01A1029258A39F000E45799 /* CoreDataStack.swift in Sources */,
+				A01A103E258A3B1C00E45799 /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,6 +452,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A01A1024258A387D00E45799 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A01A1025258A387D00E45799 /* Model.xcdatamodel */,
+			);
+			currentVersion = A01A1025258A387D00E45799 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 8F755A942588C86E00C3CB72 /* Project object */;
 }
