@@ -25,6 +25,7 @@
 		A01A103B258A3B0100E45799 /* CancelBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01A103A258A3B0100E45799 /* CancelBag.swift */; };
 		A01A103E258A3B1C00E45799 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01A103D258A3B1C00E45799 /* Models.swift */; };
 		A01A1041258A3FB100E45799 /* ImagesDBRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01A1040258A3FB100E45799 /* ImagesDBRepository.swift */; };
+		A074BEB1258A4BC500CC525F /* CombineExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A074BEB0258A4BC500CC525F /* CombineExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		A01A103A258A3B0100E45799 /* CancelBag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelBag.swift; sourceTree = "<group>"; };
 		A01A103D258A3B1C00E45799 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Models.swift; path = workshop/Models.swift; sourceTree = SOURCE_ROOT; };
 		A01A1040258A3FB100E45799 /* ImagesDBRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImagesDBRepository.swift; path = workshop/ImagesDBRepository.swift; sourceTree = SOURCE_ROOT; };
+		A074BEB0258A4BC500CC525F /* CombineExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombineExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 		A01A1039258A3AF400E45799 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				A074BEB0258A4BC500CC525F /* CombineExtensions.swift */,
 				A01A103A258A3B0100E45799 /* CancelBag.swift */,
 				A01A1033258A3A6F00E45799 /* Loadable.swift */,
 				A01A102B258A3A0500E45799 /* LazyList.swift */,
@@ -268,6 +271,7 @@
 				8F755AA02588C86E00C3CB72 /* workshopApp.swift in Sources */,
 				A01A1029258A39F000E45799 /* CoreDataStack.swift in Sources */,
 				A01A103E258A3B1C00E45799 /* Models.swift in Sources */,
+				A074BEB1258A4BC500CC525F /* CombineExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
