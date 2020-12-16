@@ -29,13 +29,46 @@ struct StartView: View {
             }.frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             
             VStack {
-                List(0..<VM.images.count) { i in
-                    Image(uiImage: VM.images[i]).resizable().aspectRatio(contentMode: .fit)
-                }.id(UUID())
-            }.frame(width: 250, height: 250, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                ImagesView(images: VM.images)
+            }
         }
         .sheet(isPresented: $VM.pickerBool) {
             SwiftUIImagePickerView(images: $VM.images, showPicker: $VM.pickerBool, selectionLimit: 3)
+        }
+    }
+    
+    struct ImagesView: View {
+        @State var index = 0
+
+        var images: [UIImage] = []
+
+        var body: some View {
+            VStack(spacing: 20) {
+                PagingView(index: $index.animation(), maxIndex: images.count - 1) {
+                    ForEach(self.images, id: \.self) { imageName in
+                        Image(uiImage: imageName)
+                            .resizable()
+                            .scaledToFill()
+                    }
+                }
+                .aspectRatio(4/3, contentMode: .fit)
+                .clipShape(RoundedRectangle(cornerRadius: 15))
+
+//                PagingView(index: $index.animation(), maxIndex: images.count > 0 ? (images.count - 1) : 0) {
+//                    ForEach(self.images, id: \.self) { imageName in
+//                        Image(uiImage: imageName)
+//                            .resizable()
+//                            .scaledToFill()
+//                    }
+//                }
+//                .aspectRatio(3/4, contentMode: .fit)
+//                .clipShape(RoundedRectangle(cornerRadius: 15))
+                
+                images.count > 0 ?
+                Stepper("Index: \(index)", value: $index.animation(.easeInOut), in: 0...images.count-1)
+                    .font(Font.body.monospacedDigit()) : nil
+            }
+            .padding()
         }
     }
 }

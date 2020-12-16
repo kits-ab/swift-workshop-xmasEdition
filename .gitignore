@@ -25,6 +25,9 @@ DerivedData/
 ## macOS Files
 .DS_Store
 
+## Project Files
+Workshop/workshop.xcodeproj/project.pbxproj
+
 ## Obj-C/Swift specific
 *.hmap
 
