@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4E16510C258A0A3E00CE0942 /* SwiftUIImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E16510B258A0A3E00CE0942 /* SwiftUIImagePickerView.swift */; };
+		4E3F8E38258A465E00D71251 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3F8E37258A465E00D71251 /* ImageService.swift */; };
 		8F755AA02588C86E00C3CB72 /* workshopApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F755A9F2588C86E00C3CB72 /* workshopApp.swift */; };
 		8F755AA22588C86E00C3CB72 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F755AA12588C86E00C3CB72 /* ContentView.swift */; };
 		8F755AA42588C87200C3CB72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F755AA32588C87200C3CB72 /* Assets.xcassets */; };
@@ -28,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		4E16510B258A0A3E00CE0942 /* SwiftUIImagePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftUIImagePickerView.swift; sourceTree = "<group>"; };
+		4E3F8E37258A465E00D71251 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 		8F755A9C2588C86E00C3CB72 /* workshop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = workshop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F755A9F2588C86E00C3CB72 /* workshopApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = workshopApp.swift; sourceTree = "<group>"; };
 		8F755AA12588C86E00C3CB72 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				8F755AB52588D89B00C3CB72 /* UI */,
 				8F755AB42588D87C00C3CB72 /* System */,
 				8F755AB32588D86600C3CB72 /* Services */,
+				4E3F8E37258A465E00D71251 /* ImageService.swift */,
 				8F755AB22588D84D00C3CB72 /* Repositories */,
 				8F755AB12588D83400C3CB72 /* Persistence */,
 				8F755AB02588D82A00C3CB72 /* Models */,
@@ -250,6 +253,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A01A102F258A3A2900E45799 /* CoreDataHelper.swift in Sources */,
+				4E3F8E38258A465E00D71251 /* ImageService.swift in Sources */,
 				A01A102C258A3A0500E45799 /* LazyList.swift in Sources */,
 				A01A1037258A3AC900E45799 /* CoreDataModels.swift in Sources */,
 				A0080DA6258A1B8900204DDE /* PagingView.swift in Sources */,

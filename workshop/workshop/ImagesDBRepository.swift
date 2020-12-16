@@ -11,7 +11,7 @@ import Combine
 protocol ImagesDBRepository {
     var persistentStore: PersistentStore { get }
     func store(image: Images) -> AnyPublisher<Images, Error>
-    func image() -> AnyPublisher<LazyList<Images>, Error>
+    func image() -> AnyPublisher<Images?, Error>
 }
 
 struct RealImagesDBRepository: ImagesDBRepository {
@@ -24,11 +24,13 @@ struct RealImagesDBRepository: ImagesDBRepository {
         }
     }
     
-    func image() -> AnyPublisher<LazyList<Images>, Error> {
+    func image() -> AnyPublisher<Images?, Error> {
         let fetchImage = ImageMO.image()
         return persistentStore.fetch(fetchImage) {
             Images(managedObject: $0)
-        }
+        }.compactMap{
+            $0.first
+        }.eraseToAnyPublisher()
     }
 }
 
