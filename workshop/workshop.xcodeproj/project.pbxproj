@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E16510C258A0A3E00CE0942 /* SwiftUIImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E16510B258A0A3E00CE0942 /* SwiftUIImagePickerView.swift */; };
 		8F755AA02588C86E00C3CB72 /* workshopApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F755A9F2588C86E00C3CB72 /* workshopApp.swift */; };
 		8F755AA22588C86E00C3CB72 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F755AA12588C86E00C3CB72 /* ContentView.swift */; };
 		8F755AA42588C87200C3CB72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F755AA32588C87200C3CB72 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4E16510B258A0A3E00CE0942 /* SwiftUIImagePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftUIImagePickerView.swift; sourceTree = "<group>"; };
 		8F755A9C2588C86E00C3CB72 /* workshop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = workshop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F755A9F2588C86E00C3CB72 /* workshopApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = workshopApp.swift; sourceTree = "<group>"; };
 		8F755AA12588C86E00C3CB72 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -37,6 +39,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E16510A258A0A0E00CE0942 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
 		8F755A932588C86E00C3CB72 = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +65,8 @@
 		8F755A9E2588C86E00C3CB72 /* workshop */ = {
 			isa = PBXGroup;
 			children = (
+				4E16510A258A0A0E00CE0942 /* Lib */,
+				4E16510B258A0A3E00CE0942 /* SwiftUIImagePickerView.swift */,
 				8F755AB52588D89B00C3CB72 /* UI */,
 				8F755AB42588D87C00C3CB72 /* System */,
 				8F755AB32588D86600C3CB72 /* Services */,
@@ -201,6 +212,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F755AB82589066D00C3CB72 /* StartView.swift in Sources */,
+				4E16510C258A0A3E00CE0942 /* SwiftUIImagePickerView.swift in Sources */,
 				8F755ABB25890C3A00C3CB72 /* StartViewModel.swift in Sources */,
 				8F755AA22588C86E00C3CB72 /* ContentView.swift in Sources */,
 				8F755AA02588C86E00C3CB72 /* workshopApp.swift in Sources */,
