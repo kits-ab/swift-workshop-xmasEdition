@@ -14,6 +14,7 @@
 		8F755AA72588C87200C3CB72 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F755AA62588C87200C3CB72 /* Preview Assets.xcassets */; };
 		8F755AB82589066D00C3CB72 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F755AB72589066D00C3CB72 /* StartView.swift */; };
 		8F755ABB25890C3A00C3CB72 /* StartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F755ABA25890C3A00C3CB72 /* StartViewModel.swift */; };
+		A0080DA6258A1B8900204DDE /* PagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0080DA5258A1B8900204DDE /* PagingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		8F755AA82588C87200C3CB72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8F755AB72589066D00C3CB72 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		8F755ABA25890C3A00C3CB72 /* StartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewModel.swift; sourceTree = "<group>"; };
+		A0080DA5258A1B8900204DDE /* PagingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +45,7 @@
 			isa = PBXGroup;
 			children = (
 				4E16510B258A0A3E00CE0942 /* SwiftUIImagePickerView.swift */,
+				A0080DA5258A1B8900204DDE /* PagingView.swift */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0080DA6258A1B8900204DDE /* PagingView.swift in Sources */,
 				8F755AB82589066D00C3CB72 /* StartView.swift in Sources */,
 				4E16510C258A0A3E00CE0942 /* SwiftUIImagePickerView.swift in Sources */,
 				8F755ABB25890C3A00C3CB72 /* StartViewModel.swift in Sources */,
@@ -345,6 +349,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"workshop/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = workshop/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -366,6 +371,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"workshop/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = workshop/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
