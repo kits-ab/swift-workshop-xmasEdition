@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct workshopApp: App {
+    let environment = AppEnvironment.bootstrap()
     var body: some Scene {
         WindowGroup {
             ContentView()

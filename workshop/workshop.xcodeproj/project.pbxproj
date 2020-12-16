@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4E16510C258A0A3E00CE0942 /* SwiftUIImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E16510B258A0A3E00CE0942 /* SwiftUIImagePickerView.swift */; };
 		4E3F8E38258A465E00D71251 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3F8E37258A465E00D71251 /* ImageService.swift */; };
+		4E3F8E3D258A4FE400D71251 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3F8E3C258A4FE400D71251 /* AppEnvironment.swift */; };
+		4E3F8E43258A507800D71251 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3F8E42258A507800D71251 /* DIContainer.swift */; };
 		8F755AA02588C86E00C3CB72 /* workshopApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F755A9F2588C86E00C3CB72 /* workshopApp.swift */; };
 		8F755AA22588C86E00C3CB72 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F755AA12588C86E00C3CB72 /* ContentView.swift */; };
 		8F755AA42588C87200C3CB72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F755AA32588C87200C3CB72 /* Assets.xcassets */; };
@@ -31,6 +33,8 @@
 /* Begin PBXFileReference section */
 		4E16510B258A0A3E00CE0942 /* SwiftUIImagePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftUIImagePickerView.swift; sourceTree = "<group>"; };
 		4E3F8E37258A465E00D71251 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
+		4E3F8E3C258A4FE400D71251 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
+		4E3F8E42258A507800D71251 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
 		8F755A9C2588C86E00C3CB72 /* workshop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = workshop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F755A9F2588C86E00C3CB72 /* workshopApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = workshopApp.swift; sourceTree = "<group>"; };
 		8F755AA12588C86E00C3CB72 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -73,6 +77,14 @@
 			path = Lib;
 			sourceTree = "<group>";
 		};
+		4E3F8E41258A502E00D71251 /* Injected */ = {
+			isa = PBXGroup;
+			children = (
+				4E3F8E42258A507800D71251 /* DIContainer.swift */,
+			);
+			path = Injected;
+			sourceTree = "<group>";
+		};
 		8F755A932588C86E00C3CB72 = {
 			isa = PBXGroup;
 			children = (
@@ -94,9 +106,9 @@
 			children = (
 				4E16510A258A0A0E00CE0942 /* Lib */,
 				8F755AB52588D89B00C3CB72 /* UI */,
+				4E3F8E41258A502E00D71251 /* Injected */,
 				8F755AB42588D87C00C3CB72 /* System */,
 				8F755AB32588D86600C3CB72 /* Services */,
-				4E3F8E37258A465E00D71251 /* ImageService.swift */,
 				8F755AB22588D84D00C3CB72 /* Repositories */,
 				8F755AB12588D83400C3CB72 /* Persistence */,
 				8F755AB02588D82A00C3CB72 /* Models */,
@@ -145,6 +157,7 @@
 		8F755AB32588D86600C3CB72 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				4E3F8E37258A465E00D71251 /* ImageService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -152,6 +165,7 @@
 		8F755AB42588D87C00C3CB72 /* System */ = {
 			isa = PBXGroup;
 			children = (
+				4E3F8E3C258A4FE400D71251 /* AppEnvironment.swift */,
 				8F755A9F2588C86E00C3CB72 /* workshopApp.swift */,
 			);
 			path = System;
@@ -262,6 +276,7 @@
 				A0080DA6258A1B8900204DDE /* PagingView.swift in Sources */,
 				8F755AB82589066D00C3CB72 /* StartView.swift in Sources */,
 				4E16510C258A0A3E00CE0942 /* SwiftUIImagePickerView.swift in Sources */,
+				4E3F8E3D258A4FE400D71251 /* AppEnvironment.swift in Sources */,
 				A01A1026258A387D00E45799 /* Model.xcdatamodeld in Sources */,
 				A01A1041258A3FB100E45799 /* ImagesDBRepository.swift in Sources */,
 				A01A103B258A3B0100E45799 /* CancelBag.swift in Sources */,
@@ -271,6 +286,7 @@
 				8F755AA02588C86E00C3CB72 /* workshopApp.swift in Sources */,
 				A01A1029258A39F000E45799 /* CoreDataStack.swift in Sources */,
 				A01A103E258A3B1C00E45799 /* Models.swift in Sources */,
+				4E3F8E43258A507800D71251 /* DIContainer.swift in Sources */,
 				A074BEB1258A4BC500CC525F /* CombineExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

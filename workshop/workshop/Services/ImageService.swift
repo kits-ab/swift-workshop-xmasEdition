@@ -13,10 +13,6 @@ protocol ImageService {
 }
 
 struct RealImageService: ImageService {
-    func loadImage(image: LoadableSubject<Images>) {
-        dbRepository.image().sink
-    }
-    
     private var dbRepository: ImagesDBRepository
     
     init(dbRepository: ImagesDBRepository) {
@@ -26,5 +22,12 @@ struct RealImageService: ImageService {
     func storeImage(image: Images) -> AnyPublisher<Images, Error> {
         return dbRepository.store(image: image)
     }
-    
+
+    func loadImage(image: LoadableSubject<Images>) {
+        let cancelBag = CancelBag()
+        image.wrappedValue.setIsLoading(cancelBag: cancelBag)
+        dbRepository.image().sinkToLoadable {
+            image.wrappedValue = $0.unwrap()
+        }.store(in: cancelBag)
+    }
 }
