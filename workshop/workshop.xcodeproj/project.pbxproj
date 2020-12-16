@@ -42,6 +42,7 @@
 		4E16510A258A0A0E00CE0942 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				4E16510B258A0A3E00CE0942 /* SwiftUIImagePickerView.swift */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -66,7 +67,6 @@
 			isa = PBXGroup;
 			children = (
 				4E16510A258A0A0E00CE0942 /* Lib */,
-				4E16510B258A0A3E00CE0942 /* SwiftUIImagePickerView.swift */,
 				8F755AB52588D89B00C3CB72 /* UI */,
 				8F755AB42588D87C00C3CB72 /* System */,
 				8F755AB32588D86600C3CB72 /* Services */,

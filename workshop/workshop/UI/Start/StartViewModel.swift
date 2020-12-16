@@ -10,5 +10,7 @@ import SwiftUI
 extension StartView {
     class ViewModel: ObservableObject {
         @Published var xmas : String = "X-MAS Edition 🎅🏻🤶🏻🎄"
+        @Published var images: [UIImage] = []
+        @Published var pickerBool: Bool = false
     }
 }

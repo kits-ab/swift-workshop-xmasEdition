@@ -16,19 +16,20 @@ struct StartView: View {
     }
     
     var body: some View {
-        
         VStack {
             Text("Swift Workshop!").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).padding()
             Text(VM.xmas).foregroundColor(.gray)
-            Image(systemName: "camera.viewfinder")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .onTapGesture {
-                    self.pickerBool.toggle()
-                }
+            VStack {
+                Image(systemName: "camera.viewfinder")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .onTapGesture {
+                        VM.pickerBool.toggle()
+                    }
+            }.frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
         }
-        .sheet(isPresented: self.$pickerBool) {
-            SwiftUIImagePickerView(images: self.$images, showPicker: self.$pickerBool, selectionLimit: 3)
+        .sheet(isPresented: $VM.pickerBool) {
+            SwiftUIImagePickerView(images: $VM.images, showPicker: $VM.pickerBool, selectionLimit: 3)
         }
     }
 }
