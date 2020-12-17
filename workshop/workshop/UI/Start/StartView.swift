@@ -52,9 +52,16 @@ struct StartView: View {
     private func loadedView(_ image: Images) -> some View {
         VStack {
             ImagesView(images: [image.img])
-            Button("Process Image") {
-                VM.processImage()
-            }.disabled(VM.imageIsProcessing)
+            HStack {
+                Button("Xmas Colors") {
+                    print("Button")
+                    VM.processImage()
+                }.accentColor(.red)
+                .background(Color.green)
+                .cornerRadius(5.0)
+                .padding()
+                .disabled(VM.imageIsProcessing)
+            }
             if VM.imageIsProcessing {
                 ProgressView("Processing Image...")
             } else {
