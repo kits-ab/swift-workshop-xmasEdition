@@ -15,7 +15,7 @@ struct ContentView: View {
     }
 
     var body: some View {
-        StartView(viewModel: .init())
+        StartView(viewModel: .init(container: VM.container))
     }
 }
 
@@ -28,8 +28,8 @@ extension ContentView {
         }
     }
 }
-struct ContentView_Previews: PreviewProvider {
+/*struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(viewModel: )
     }
-}
+}*/

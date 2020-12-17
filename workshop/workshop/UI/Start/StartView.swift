@@ -28,12 +28,34 @@ struct StartView: View {
                     }
             }.frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             
+            content
+            
             VStack {
-                ImagesView(images: VM.images)
+               // ImagesView(images: VM.)
             }
         }
         .sheet(isPresented: $VM.pickerBool) {
-            SwiftUIImagePickerView(images: $VM.images, showPicker: $VM.pickerBool, selectionLimit: 3)
+            //SwiftUIImagePickerView(images: $VM.images, showPicker: $VM.pickerBool, selectionLimit: 3)
+        }
+    }
+    
+    private var content : AnyView {
+        switch VM.loadableImage {
+        case .notRequested:
+            VM.loadImage()
+            return AnyView(Text("Not requested"))
+        case .isLoading(_, _):
+            return AnyView(Text("Loading..."))
+        case let .loaded(image):
+            return AnyView(loadedView(image))
+        case let .failed(error):
+            return AnyView(Text("\(error.localizedDescription)"))
+        }
+    }
+    
+    private func loadedView(_ image: Images) -> some View {
+        VStack {
+            Image(uiImage: image.img)
         }
     }
     
@@ -77,7 +99,7 @@ struct StartView: View {
 #if DEBUG
 struct StartView_Previews: PreviewProvider {
     static var previews: some View {
-        StartView(viewModel: StartView.ViewModel.init())
+        StartView(viewModel: .init(container: .preview))
     }
 }
 #endif

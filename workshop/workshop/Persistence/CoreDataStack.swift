@@ -170,7 +170,7 @@ extension CoreDataStack {
         }
         
         var modelName: String {
-            return "ShibunModel"
+            return "Model"
         }
         
         func dbFileURL(_ directory: FileManager.SearchPathDirectory,
@@ -182,7 +182,7 @@ extension CoreDataStack {
         
         private var subpathToDB: String {
             //return "db.sql"
-            return "shibun.sql"
+            return "model.sql"
         }
     }
 }

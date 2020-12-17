@@ -10,17 +10,16 @@ import Combine
 
 protocol ImagesDBRepository {
     var persistentStore: PersistentStore { get }
-    func store(image: Images) -> AnyPublisher<Images, Error>
+    func store(image: Images) -> AnyPublisher<Void, Error>
     func image() -> AnyPublisher<Images?, Error>
 }
 
 struct RealImagesDBRepository: ImagesDBRepository {
     let persistentStore: PersistentStore
     
-    func store(image: Images) -> AnyPublisher<Images, Error> {
+    func store(image: Images) -> AnyPublisher<Void, Error> {
         return persistentStore.update { context in
             image.store(in: context)
-            return image
         }
     }
     

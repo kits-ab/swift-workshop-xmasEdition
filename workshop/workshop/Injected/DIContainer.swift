@@ -14,6 +14,9 @@ struct DIContainer: EnvironmentKey {
     
     struct Services{
         let imageService : ImageService
+        static var stub: Self {
+            .init(imageService: StubImageService())
+        }
     }
     
     struct DBRepository {
@@ -32,3 +35,11 @@ extension EnvironmentValues {
         }
     }
 }
+
+#if DEBUG
+extension DIContainer {
+    static var preview: Self {
+        .init(services: .stub)
+    }
+}
+#endif
