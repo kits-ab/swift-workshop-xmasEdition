@@ -28,7 +28,7 @@ struct RealImagesDBRepository: ImagesDBRepository {
         return persistentStore.fetch(fetchImage) {
             Images(managedObject: $0)
         }.compactMap{
-            $0.first
+            return $0.first
         }.eraseToAnyPublisher()
     }
 }

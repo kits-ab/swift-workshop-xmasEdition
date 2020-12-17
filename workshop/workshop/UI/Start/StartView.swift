@@ -29,13 +29,9 @@ struct StartView: View {
             }.frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             
             content
-            
-            VStack {
-               // ImagesView(images: VM.)
-            }
         }
         .sheet(isPresented: $VM.pickerBool) {
-            //SwiftUIImagePickerView(images: $VM.images, showPicker: $VM.pickerBool, selectionLimit: 3)
+            SwiftUIImagePickerView(images: $VM.image, showPicker: $VM.pickerBool, selectionLimit: 1)
         }
     }
     
@@ -48,15 +44,27 @@ struct StartView: View {
             return AnyView(Text("Loading..."))
         case let .loaded(image):
             return AnyView(loadedView(image))
-        case let .failed(error):
-            return AnyView(Text("\(error.localizedDescription)"))
+        case .failed(_):
+            return AnyView(Text("Nothing to show"))
         }
     }
     
     private func loadedView(_ image: Images) -> some View {
         VStack {
-            Image(uiImage: image.img)
+            ImagesView(images: [image.img])
+            Button("Process Image") {
+                VM.processImage()
+            }.disabled(VM.imageIsProcessing)
+            if VM.imageIsProcessing {
+                ProgressView("Processing Image...")
+            } else {
+                processedImageView
+            }
         }
+    }
+    
+    private var processedImageView: some View {
+        ImagesView(images: [VM.processedImage])
     }
     
     struct ImagesView: View {
@@ -85,10 +93,10 @@ struct StartView: View {
 //                }
 //                .aspectRatio(3/4, contentMode: .fit)
 //                .clipShape(RoundedRectangle(cornerRadius: 15))
-                
-                images.count > 0 ?
-                Stepper("Index: \(index)", value: $index.animation(.easeInOut), in: 0...images.count-1)
-                    .font(Font.body.monospacedDigit()) : nil
+//
+//                images.count > 0 ?
+//                Stepper("Index: \(index)", value: $index.animation(.easeInOut), in: 0...images.count-1)
+//                    .font(Font.body.monospacedDigit()) : nil
             }
             .padding()
         }

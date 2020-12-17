@@ -5,11 +5,14 @@
 //  Created by Pierre Sandboge on 2020-12-16.
 //
 
+import SwiftUI
 import Combine
 
 protocol ImageService {
-    func storeImage(image: Images)
+    @discardableResult
+    func storeImage(image: Images) -> AnyPublisher<Void, Error>
     func loadImage(image: LoadableSubject<Images>)
+    func processImage(image: UIImage) -> UIImage
 }
 
 struct RealImageService: ImageService {
@@ -19,13 +22,8 @@ struct RealImageService: ImageService {
         self.dbRepository = dbRepository
     }
 
-    func storeImage(image: Images) {
-        dbRepository.store(image: image).sinkToResult{ result in
-            switch result {
-                case .success(_): print("Successfully stored image")
-                case .failure(let error): print(error)
-            }
-        }.store(in: CancelBag())
+    func storeImage(image: Images) -> AnyPublisher<Void, Error> {
+        return dbRepository.store(image: image)
     }
 
     func loadImage(image: LoadableSubject<Images>) {
@@ -35,12 +33,21 @@ struct RealImageService: ImageService {
             image.wrappedValue = $0.unwrap()
         }.store(in: cancelBag)
     }
+    
+    func processImage(image: UIImage) -> UIImage {
+        ProcessImage().process(image: image)
+    }
 }
 
 struct StubImageService: ImageService {
-    func storeImage(image: Images) {
+    func storeImage(image: Images) -> AnyPublisher<Void, Error> {
+        Just<Void>.withErrorType(Error.self)
     }
     
     func loadImage(image: LoadableSubject<Images>) {
+    }
+    
+    func processImage(image: UIImage) -> UIImage {
+        UIImage()
     }
 }

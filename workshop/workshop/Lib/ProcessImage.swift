@@ -9,23 +9,33 @@ import SwiftUI
 import Foundation
 
 struct ProcessImage {
-    
-    
-    func process(image: UIImage) {
-        let cgImage = image.cgImage
+    func process(image: UIImage) -> UIImage {
+        let cgImage = image.cgImage?.copy()
         let width = cgImage?.width ?? 1000
         let height = cgImage?.height ?? 1000
         let bitsPerComponent = cgImage?.bitsPerComponent ?? 8
         let bytesPerRow = cgImage?.bytesPerRow ?? width*4
         let bitmapInfo: UInt32 = (cgImage?.bitmapInfo)!.rawValue
-        let colorSpace: CGColorSpace = CGColorSpaceCreateDeviceRGB();
+        let colorSpace: CGColorSpace = cgImage?.colorSpace ?? CGColorSpaceCreateDeviceRGB();
         let pixels = UnsafeMutablePointer<UInt32>.allocate(capacity: width*height)
-            
-        let context: CGContext = CGContext(data: pixels, width: width, height: height, bitsPerComponent: bitsPerComponent, bytesPerRow: bytesPerRow, space: colorSpace,  bitmapInfo: bitmapInfo)!;
+        let context: CGContext = CGContext(data: pixels, width: width, height: height, bitsPerComponent: bitsPerComponent, bytesPerRow: bytesPerRow, space: colorSpace, bitmapInfo: bitmapInfo)!;
+        pixels.pointee = 0;
         
+        print("Image: \(String(describing: cgImage))")
+        print("Bits per component: \(bitsPerComponent)")
+        print("Bytes per row \(bytesPerRow)")
+        print("Color space: \(colorSpace)")
         
+        for pixel in 0..<(width*height) {
+            pixels[pixel] = pixels[pixel] & 0xffffffff
+            if pixel % 1000 == 0 {
+                print("\(String(format: "%02X", pixels[pixel]))")
+            }
+        }
         
-        
-
+        if let result = context.makeImage() {
+            return UIImage(cgImage: result)
+        }
+        return UIImage(systemName: "camera")!
     }
 }

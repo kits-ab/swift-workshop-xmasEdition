@@ -15,6 +15,7 @@ extension Images {
     @discardableResult
     func store(in context: NSManagedObjectContext) -> ImageMO? {
         guard let imageMO = ImageMO.insertNew(in: context) else { return nil }
+        imageMO.id = self.id
         imageMO.img = self.img.pngData()
         
         return imageMO

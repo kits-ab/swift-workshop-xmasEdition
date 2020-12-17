@@ -47,8 +47,11 @@ struct SwiftUIImagePickerView: UIViewControllerRepresentable {
                         guard let image1 = image else { return }
                         
                         DispatchQueue.main.async {
-                            self.parent.images.append(image1 as! UIImage)
-                            print("Appending image: \(image1)")
+                            if self.parent.images.count > 0 {
+                                self.parent.images[0] = image1 as! UIImage
+                            } else {
+                                self.parent.images.append(image1 as! UIImage)
+                            }
                         }
                     }
                 } else {

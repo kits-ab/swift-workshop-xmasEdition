@@ -9,10 +9,12 @@ import Foundation
 import SwiftUI
 
 struct Images {
+    var id: String
     var img: UIImage
     
-    init(img: UIImage) {
+    init(id: String = "1", img: UIImage) {
         self.img = img
+        self.id = id
     }
     
     static func ==(lhs: Self, rhs: Self) -> Bool {
