@@ -16,22 +16,34 @@ struct StartView: View {
     }
     
     var body: some View {
-        VStack {
-            Text("Swift Workshop!").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).padding()
-            Text(VM.xmas).foregroundColor(.gray)
+        ZStack {
+    
+                
+                VStack {
+                    Spacer()
+                    ScrollView {
+                    
+                    VStack {
+                        Image(systemName: "camera.viewfinder")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .onTapGesture {
+                                VM.pickerBool.toggle()
+                            }
+                    }.frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    
+                    content
+                    Spacer()
+                }
+                
+            }.sheet(isPresented: $VM.pickerBool) {
+                SwiftUIImagePickerView(images: $VM.image, showPicker: $VM.pickerBool, selectionLimit: 1)
+            }
             VStack {
-                Image(systemName: "camera.viewfinder")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .onTapGesture {
-                        VM.pickerBool.toggle()
-                    }
-            }.frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-            
-            content
-        }
-        .sheet(isPresented: $VM.pickerBool) {
-            SwiftUIImagePickerView(images: $VM.image, showPicker: $VM.pickerBool, selectionLimit: 1)
+                Text("Photo enhancer!").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                Text(VM.xmas).foregroundColor(.gray)
+                Spacer()
+            }.padding(.top, 10)
         }
     }
     
@@ -55,22 +67,26 @@ struct StartView: View {
                 .resizable()
                 .frame(width: 300, height: 200)
                 .cornerRadius(20)
-            HStack {
-                Button("Xmas Colors") {
-                    VM.processImage()
-                }.accentColor(.red)
-                .background(Color.green)
-                .cornerRadius(5.0)
-                .padding()
-                .disabled(VM.imageIsProcessing)
-                Button("Export") {
-                    VM.save()
-                }.accentColor(.red)
-                .background(Color.green)
-                .cornerRadius(5.0)
-                .padding()
-                .disabled(VM.imageIsProcessing)
-            }
+            
+           
+                HStack {
+                    Button("Xmas Colors") {
+                        VM.processImage()
+                    }.accentColor(.red)
+                    .background(Color.green)
+                    .cornerRadius(5.0)
+                    .padding()
+                    .disabled(VM.imageIsProcessing)
+                    
+                    Button("Export") {
+                        VM.save()
+                    }.accentColor(.red)
+                    .background(Color.green)
+                    .cornerRadius(5.0)
+                    .padding()
+                    .disabled(VM.imageIsProcessing)
+                }
+            
             if VM.imageIsProcessing {
                 ProgressView("Processing Image...")
             } else {
