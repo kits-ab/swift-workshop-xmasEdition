@@ -27,14 +27,13 @@ struct ProcessImage {
         print("Bytes per row \(bytesPerRow)")
         print("Color space: \(colorSpace)")
         
-        context.setBlendMode(CGBlendMode.normal)
         for pixel in 0..<(width*height) {
             let red = pixels[pixel] & 0xff
             let green = (pixels[pixel]>>8) & 0xff
             if (red > green) {
                 pixels[pixel] = pixels[pixel] & 0x0000ff
             } else {
-                pixels[pixel] = pixels[pixel] & 0x0000ff00
+                pixels[pixel] = pixels[pixel] & 0x00ff00
             }
             if pixel % 100000 == 0 {
                 print("\(String(format: "%02X", pixels[pixel]))")
