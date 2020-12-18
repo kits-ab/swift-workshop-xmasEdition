@@ -69,7 +69,7 @@ enum BannerType {
         case .Info:
             return Color(red: 67/255, green: 154/255, blue: 215/255)
         case .Success:
-            return ColorManager.secondary
+            return Color.blue
         case .Warning:
             return Color.yellow
         case .Error:
@@ -95,22 +95,22 @@ struct BannerModifier_Previews: PreviewProvider {
         
         var body: some View {
             VStack {
-                PrimaryButton(text: "Success") {
+                Button("Success") {
                     showBanner = true
                     bannerData = BannerModifier.BannerData(title: "Success!", detail: "You made a banner appear", type: .Success)
                 }
                 
-                PrimaryButton(text: "Warning") {
+                Button("Warning") {
                     showBanner = true
                     bannerData = BannerModifier.BannerData(title: "Warning!", detail: "You made a banner appear", type: .Warning)
                 }
                 
-                PrimaryButton(text: "Info") {
+                Button("Info") {
                     showBanner = true
                     bannerData = BannerModifier.BannerData(title: "Info!", detail: "You made a banner appear", type: .Info)
                 }
                 
-                PrimaryButton(text: "Error") {
+                Button("Error") {
                     showBanner = true
                     bannerData = BannerModifier.BannerData(title: "Error!", detail: "You made a banner appear", type: .Error)
                 }

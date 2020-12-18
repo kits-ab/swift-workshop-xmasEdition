@@ -17,26 +17,27 @@ struct StartView: View {
     
     var body: some View {
         ZStack {
-    
-                
-                VStack {
-                    Spacer()
-                    ScrollView {
+            Color("BackgroundColor").edgesIgnoringSafeArea(.all)
+            VStack {
+                Spacer()
+                ScrollView {
                     
                     VStack {
-                        Image(systemName: "camera.viewfinder")
+                        Image(systemName: "photo.on.rectangle.angled")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .onTapGesture {
                                 VM.pickerBool.toggle()
-                            }
-                    }.frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            }                            .foregroundColor(.accentColor)
+
+                    }.frame(width: 150, height: 150, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     
                     content
                     Spacer()
                 }
                 
-            }.sheet(isPresented: $VM.pickerBool) {
+            }.padding(.top, 100)
+            .sheet(isPresented: $VM.pickerBool) {
                 SwiftUIImagePickerView(images: $VM.image, showPicker: $VM.pickerBool, selectionLimit: 1)
             }
             VStack {
@@ -44,7 +45,31 @@ struct StartView: View {
                 Text(VM.xmas).foregroundColor(.gray)
                 Spacer()
             }.padding(.top, 10)
-        }
+            VStack {
+                Spacer()
+                HStack {
+                    Button(action: {
+                        VM.processImage()
+                    }){
+                        Text("Xmas Colors").bold()
+                    }.accentColor(.white)
+                    .frame(width: 150,height: 79)
+                    .background(Color(red: 0, green:0.5, blue:0))
+                    .cornerRadius(30.0)
+                    .disabled(VM.imageIsProcessing)
+                    
+                    Button(action: {
+                        VM.save()
+                    }){
+                        Text("Export").bold()
+                    }.accentColor(.white)
+                    .frame(width: 150,height: 79)
+                    .background(Color(red: 0, green:0.5, blue:0))
+                    .cornerRadius(30.0)
+                    .disabled(VM.imageIsProcessing || VM.processedImage == nil)
+                }
+            }
+        }.banner(data: $VM.bannerData, show: $VM.showBanner)
     }
     
     private var content : AnyView {
@@ -69,24 +94,6 @@ struct StartView: View {
                 .cornerRadius(20)
             
            
-                HStack {
-                    Button("Xmas Colors") {
-                        VM.processImage()
-                    }.accentColor(.red)
-                    .background(Color.green)
-                    .cornerRadius(5.0)
-                    .padding()
-                    .disabled(VM.imageIsProcessing)
-                    
-                    Button("Export") {
-                        VM.save()
-                    }.accentColor(.red)
-                    .background(Color.green)
-                    .cornerRadius(5.0)
-                    .padding()
-                    .disabled(VM.imageIsProcessing)
-                }
-            
             if VM.imageIsProcessing {
                 ProgressView("Processing Image...")
             } else {

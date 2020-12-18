@@ -19,7 +19,10 @@ extension StartView {
             }
         }
         @Published var imageIsProcessing: Bool = false
-        
+        @Published var showBanner: Bool = false
+
+        var bannerData: BannerModifier.BannerData = .init(title: "SUCCESS", detail: "Successfully saved image to lib", type: .Success)
+
         let container : DIContainer
         
         init(container: DIContainer, image: Loadable<Images> = .notRequested) {
@@ -44,6 +47,7 @@ extension StartView {
         func save() {
             if let img = processedImage {
                 UIImageWriteToSavedPhotosAlbum(img, nil, nil, nil)
+                showBanner = true
             }
         }
         
