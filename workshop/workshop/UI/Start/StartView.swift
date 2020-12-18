@@ -69,7 +69,6 @@ struct StartView: View {
                 .disabled(VM.imageIsProcessing)
                 Button("Export") {
                     VM.save()
-                    print("Export")
                 }.accentColor(.red)
                 .background(Color.green)
                 .cornerRadius(5.0)

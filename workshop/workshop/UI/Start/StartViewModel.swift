@@ -49,7 +49,6 @@ extension StartView {
         
         func processImage() {
             imageIsProcessing = true
-            print("Image is processing: \(imageIsProcessing)")
             if case let .loaded(img) = loadableImage {
                 DispatchQueue.global().async { [self] in
                     let image = container.services.imageService.processImage(image: img.img)
