@@ -29,6 +29,7 @@
 		A01A103B258A3B0100E45799 /* CancelBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01A103A258A3B0100E45799 /* CancelBag.swift */; };
 		A01A103E258A3B1C00E45799 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01A103D258A3B1C00E45799 /* Models.swift */; };
 		A01A1041258A3FB100E45799 /* ImagesDBRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01A1040258A3FB100E45799 /* ImagesDBRepository.swift */; };
+		A0672F6C258CC59A008F9437 /* BannerModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0672F6B258CC59A008F9437 /* BannerModifier.swift */; };
 		A074BEB1258A4BC500CC525F /* CombineExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A074BEB0258A4BC500CC525F /* CombineExtensions.swift */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +58,7 @@
 		A01A103A258A3B0100E45799 /* CancelBag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelBag.swift; sourceTree = "<group>"; };
 		A01A103D258A3B1C00E45799 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Models.swift; path = workshop/Models.swift; sourceTree = SOURCE_ROOT; };
 		A01A1040258A3FB100E45799 /* ImagesDBRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImagesDBRepository.swift; path = workshop/ImagesDBRepository.swift; sourceTree = SOURCE_ROOT; };
+		A0672F6B258CC59A008F9437 /* BannerModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerModifier.swift; sourceTree = "<group>"; };
 		A074BEB0258A4BC500CC525F /* CombineExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombineExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -179,6 +181,7 @@
 		8F755AB52588D89B00C3CB72 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				A0672F6A258CC591008F9437 /* Components */,
 				8F755AA12588C86E00C3CB72 /* ContentView.swift */,
 				8F755AC32589150900C3CB72 /* Start */,
 			);
@@ -204,6 +207,14 @@
 				8F172D88258B86D9000B272F /* Store.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		A0672F6A258CC591008F9437 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A0672F6B258CC59A008F9437 /* BannerModifier.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,6 +300,7 @@
 				A01A1041258A3FB100E45799 /* ImagesDBRepository.swift in Sources */,
 				A01A103B258A3B0100E45799 /* CancelBag.swift in Sources */,
 				8F755ABB25890C3A00C3CB72 /* StartViewModel.swift in Sources */,
+				A0672F6C258CC59A008F9437 /* BannerModifier.swift in Sources */,
 				8F755AA22588C86E00C3CB72 /* ContentView.swift in Sources */,
 				A01A1034258A3A6F00E45799 /* Loadable.swift in Sources */,
 				8F755AA02588C86E00C3CB72 /* workshopApp.swift in Sources */,
