@@ -11,7 +11,7 @@ extension StartView {
     class ViewModel: ObservableObject {
         @Published var xmas : String = "X-MAS Edition 🎅🏻🤶🏻🎄"
         @Published var pickerBool: Bool = false
-        @Published var processedImage: UIImage = UIImage()
+        @Published var processedImage: UIImage?
         @Published var loadableImage: Loadable<Images>
         @Published var image: [UIImage] = [] {
             didSet {
@@ -45,10 +45,14 @@ extension StartView {
             imageIsProcessing = true
             print("Image is processing: \(imageIsProcessing)")
             if case let .loaded(img) = loadableImage {
-                processedImage = container.services.imageService.processImage(image: img.img.copy() as! UIImage)
+                DispatchQueue.global().async { [self] in
+                    let image = container.services.imageService.processImage(image: img.img)
+                    DispatchQueue.main.async {
+                        processedImage = image
+                        imageIsProcessing = false
+                    }
+                }
             }
-            imageIsProcessing = false
-            print("Image is done")
         }
     }
 }

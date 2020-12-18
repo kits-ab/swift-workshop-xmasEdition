@@ -29,6 +29,17 @@ struct StartView: View {
             }.frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             
             content
+            
+            Button("Process Image") {
+                VM.processImage()
+            }.disabled(VM.imageIsProcessing)
+            if VM.imageIsProcessing {
+                ProgressView("Processing Image...")
+            } else {
+                if let processedImage = VM.processedImage {
+                    ImagesView(images: [processedImage])
+                }
+            }
         }
         .sheet(isPresented: $VM.pickerBool) {
             SwiftUIImagePickerView(images: $VM.image, showPicker: $VM.pickerBool, selectionLimit: 1)
@@ -68,10 +79,6 @@ struct StartView: View {
                 processedImageView
             }
         }
-    }
-    
-    private var processedImageView: some View {
-        ImagesView(images: [VM.processedImage])
     }
     
     struct ImagesView: View {
