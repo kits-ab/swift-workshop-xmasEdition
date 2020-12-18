@@ -45,7 +45,6 @@ struct SwiftUIImagePickerView: UIViewControllerRepresentable {
                 if img.itemProvider.canLoadObject(ofClass: UIImage.self) {
                     img.itemProvider.loadObject(ofClass: UIImage.self) { (image, err) in
                         guard let image1 = image else {
-                            print("Cannot open the friggin img")
                             return
                         }
                         

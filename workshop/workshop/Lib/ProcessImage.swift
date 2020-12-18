@@ -22,10 +22,6 @@ struct ProcessImage {
         let context: CGContext = CGContext(data: pixels, width: width, height: height, bitsPerComponent: bitsPerComponent, bytesPerRow: bytesPerRow, space: colorSpace, bitmapInfo: bitmapInfo)!
         pixels.pointee = 0
         context.draw(cgImage!, in: CGRect(x: 0,y: 0,width: width, height: height))
-        print("Image: \(String(describing: cgImage))")
-        print("Bits per component: \(bitsPerComponent)")
-        print("Bytes per row \(bytesPerRow)")
-        print("Color space: \(colorSpace)")
         
         for pixel in 0..<(width*height) {
             let red = pixels[pixel] & 0xff
@@ -34,9 +30,6 @@ struct ProcessImage {
                 pixels[pixel] = pixels[pixel] & 0x0000ff
             } else {
                 pixels[pixel] = pixels[pixel] & 0x00ff00
-            }
-            if pixel % 100000 == 0 {
-                print("\(String(format: "%02X", pixels[pixel]))")
             }
         }
         
