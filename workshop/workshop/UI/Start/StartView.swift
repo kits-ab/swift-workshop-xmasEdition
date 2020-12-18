@@ -17,8 +17,11 @@ struct StartView: View {
     
     var body: some View {
         VStack {
-            Text("Swift Workshop!").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).padding()
+            Text("Photo enhancer!").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
             Text(VM.xmas).foregroundColor(.gray)
+        }.padding(.top, 10)
+        Spacer()
+        VStack {
             VStack {
                 Image(systemName: "camera.viewfinder")
                     .resizable()
@@ -33,6 +36,7 @@ struct StartView: View {
         .sheet(isPresented: $VM.pickerBool) {
             SwiftUIImagePickerView(images: $VM.image, showPicker: $VM.pickerBool, selectionLimit: 1)
         }
+        Spacer()
     }
     
     private var content : AnyView {
