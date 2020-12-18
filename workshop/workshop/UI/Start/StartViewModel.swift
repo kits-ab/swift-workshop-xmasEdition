@@ -40,6 +40,12 @@ extension StartView {
                 }.store(in: CancelBag())
             }
         }
+
+        func save() {
+            if let img = processedImage {
+                UIImageWriteToSavedPhotosAlbum(img, nil, nil, nil)
+            }
+        }
         
         func processImage() {
             imageIsProcessing = true
